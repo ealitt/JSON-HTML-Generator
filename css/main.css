@@ -1,0 +1,63 @@
+body {
+  background: white;
+  font-family: 'Montserrat';
+  padding: 0 15em;
+}
+
+#title {
+  padding-bottom: 4em;
+}
+
+#title h1, #title h2, #title h3, #title h4, #title h5, #title h6 {
+  font-family: 'Montserrat';
+  color: #9bb5c7;
+  text-align: center;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.box {
+  border: solid;
+}
+
+.type {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  border: solid;
+  margin-bottom: 0.5em;
+  padding: 5px;
+}
+
+.type:hover {
+  cursor: pointer;
+  color: #347db1;
+}
+
+.input {
+  display: none;
+  height: 100%;
+  width: 100%;
+}
+
+#json {
+  border: none;
+}
+
+#html-input {
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
+}
+
+#html-output {
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
+  margin-left: 1em;
+}
+/*# sourceMappingURL=main.css.map */

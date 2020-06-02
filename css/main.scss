@@ -1,0 +1,54 @@
+body {
+    background: rgb(255,255,255);
+    font-family: 'Montserrat';
+    padding: 0 15em;
+}
+
+#title {
+    padding-bottom: 4em;
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Montserrat';
+        color: #9bb5c7;
+        text-align: center;
+    }  
+}
+
+.container {
+    display: flex;
+}
+
+.box {
+    border: solid;
+}
+
+.type {
+    flex: 1;
+    border: solid;
+    margin-bottom: 0.5em;
+    padding: 5px;
+    
+    &:hover {
+        cursor: pointer;
+        color: #347db1;
+    }
+}
+
+.input {
+    display: none;
+    height: 100%;
+    width: 100%;
+}
+
+#json {
+    border: none;
+}
+
+#html-input {
+    flex: 3;
+}
+
+#html-output {
+    flex: 3;
+    margin-left: 1em;
+}
