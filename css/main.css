@@ -1,7 +1,7 @@
 body {
-  background: white;
+  background: darkgray;
   font-family: 'Montserrat';
-  padding: 0 15em;
+  padding: 0 10em;
 }
 
 #title {
@@ -10,7 +10,7 @@ body {
 
 #title h1, #title h2, #title h3, #title h4, #title h5, #title h6 {
   font-family: 'Montserrat';
-  color: #9bb5c7;
+  color: #515f68;
   text-align: center;
 }
 
@@ -42,6 +42,7 @@ body {
   display: none;
   height: 100%;
   width: 100%;
+  font-size: 16px;
 }
 
 #json {

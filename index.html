@@ -3,14 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>JSON HTML Generator</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.11/ace.js"></script>
+
     <link rel="stylesheet" href="css/main.css">
     <script type="module" src="js/index.js"></script>
+    <script type="module" src="js/htmlGenerator.js"></script>
 </head>
 <body>
     <div id="title">
         <h1>JSON HTML Generator</h1>
     </div>
     <div class="container">
+        <div id="file"></div>
         <div id="json" class="box">
             <div id="image" class="type">image</div>
             <div id="paragraph" class="type">paragraph</div>
@@ -19,11 +23,11 @@
             <div id="header" class="type">header</div>
         </div>
         <div id="html-input" class="box">
-            <div id="image-input" class="input" style="background:red"></div>
-            <div id="paragraph-input" class="input" style="background:orange"></div>
-            <div id="raw-input" class="input" style="background:yellow"></div>
-            <div id="embed-input" class="input" style="background:green"></div>
-            <div id="header-input" class="input" style="background:blue"></div>
+            <div id="image-input" class="input"></div>
+            <div id="paragraph-input" class="input" ></div>
+            <div id="raw-input" class="input"></div>
+            <div id="embed-input" class="input"></div>
+            <div id="header-input" class="input"></div>
         </div>
         <div id="html-output" class="box">
 
