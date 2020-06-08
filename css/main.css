@@ -35,7 +35,11 @@ body {
 
 .type:hover {
   cursor: pointer;
-  color: #347db1;
+  color: white;
+}
+
+.active {
+  color: white;
 }
 
 .input {

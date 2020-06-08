@@ -1,0 +1,81 @@
+{
+ "time": 1591632962881,
+ "blocks": [
+  {
+   "type": "header",
+   "data": {
+    "text": "Sprouting Strainer Mason Jars",
+    "level": 3
+   }
+  },
+  {
+   "type": "paragraph",
+   "data": {
+    "text": "March 23, 2020"
+   }
+  },
+  {
+   "type": "paragraph",
+   "data": {
+    "text": "Earlier this year I got into growing sprouts. While living in my dorm room at college, I wanted a more convenient way to strain the water from the mason jar and came up with this print. It's a meshed strainer lid for wide mouth or regular mason jars. Now that I'm back home, with my college on shutdown, it's even more important to have food during this pandemic."
+   }
+  },
+  {
+   "type": "paragraph",
+   "data": {
+    "text": "Sprouts are wonderful. They require little care, grow fast, and are very nutritious. I've grown three varieties so far; mung beans, broccoli, and alfalfa. Mung beans are crisp and crunchy. Broccoli taste and smell strongly of broccoli (a lot stronger than you might expect). Alfalfa is delicate and mild. Sprouts go great in salads, sandwiches, stir -fry (mung bean sprouts), and top off most foods well. I just had mung bean sprouts on some mashed potatoes."
+   }
+  },
+  {
+   "type": "paragraph",
+   "data": {
+    "text": "<a href=\"https://www.prusaprinters.org/prints/26325-sprout-growing-mason-jar-strainer\" target=\"_blank\">3D Files</a>"
+   }
+  },
+  {
+   "type": "image",
+   "data": {
+    "url": "https://lh3.googleusercontent.com/jDAXP0rwTCQw9psrrKfQZjkZ99M9QAzQrVioO4j1I4zfd_RWFkHe4AyQEomqrv6RYmVmxeWXTZ8dSuDX2AdNmXhIW4NEVRsk7ST7YvxN80cS8ajtNmaQM2xWWSK40Tzxx91Q2R4w1TA=w1920-h1080",
+    "caption": "",
+    "withBorder": false,
+    "withBackground": false,
+    "stretched": false
+   }
+  },
+  {
+   "type": "header",
+   "data": {
+    "text": "Printing Instructions",
+    "level": 4
+   }
+  },
+  {
+   "type": "image",
+   "data": {
+    "url": "https://lh3.googleusercontent.com/nG5OuYagAf6EcEfTnvbTlsQfFy7eY7Y8daj2cpNEhDrp4TrkcYLdG-TJmxp4HerLR1nW4EDL1q9A7CTIvSE9nz1g3yVyx3NyFOBlc7dzK667KlNAIaBD8w1SW9ZqThwtnQp_T90xuqs=w1920-h1080",
+    "caption": "",
+    "withBorder": false,
+    "withBackground": false,
+    "stretched": false
+   }
+  },
+  {
+   "type": "paragraph",
+   "data": {
+    "text": "These strainer lids take advantage of the infill settings in PrusaSlicer. You don't want seeds to fall out while straining, so the mesh size is important to keep your sprouts in the jar. Using a modifier cylinder, I took out the top and bottom layers and vary the mesh size by infill. Feel free to play around with the settings using the 3mf file, or just print and go with the gcode files. Adjust and vary for whatever seed type you use, and let me know what settings for different seeds you use down below. Here are the lid types I use for each sprout."
+   }
+  },
+  {
+   "type": "list",
+   "data": {
+    "style": "ordered",
+    "items": [
+     "Mung bean: 15% infill",
+     "Broccoli: 30% infill",
+     "Alfalfa: 30% infill"
+    ]
+   }
+  }
+ ],
+ "version": "2.18.0"
+}
