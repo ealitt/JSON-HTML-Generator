@@ -19,7 +19,9 @@ body {
 }
 
 .box {
+    flex: 3;
     border: solid;
+    height: 50vh;
 }
 
 .type {
@@ -38,22 +40,33 @@ body {
     color: white;
 }
 
-.input {
+.file-input {
+    display: flex;
+}
+
+.file-input-box {
+    flex: 3;
+}
+
+.html-format {
     display: none;
     height: 100%;
     width: 100%;
-    font-size: 16px;
 }
 
-#json {
+.input {
+    font-size: 14px;
+}
+
+#html-input-tab {
     border: none;
+    margin-left: 1em;
 }
 
 #html-input {
-    flex: 3;
+    flex: 4;
 }
 
 #html-output {
-    flex: 3;
     margin-left: 1em;
 }

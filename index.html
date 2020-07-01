@@ -6,19 +6,22 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.11/ace.js"></script>
 
     <link rel="stylesheet" href="css/main.css">
-    <script type="module" src="js/index.js"></script>
-    <script type="module" src="js/htmlGenerator.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <!-- <script type="text/javascript" src="js/htmlGenerator.js"></script> -->
 </head>
 <body>
     <div id="title">
         <h1>JSON HTML Generator</h1>
     </div>
-    <div>
-        <input type="file" id="jsonFile" accept=".json, .JSON">
+    <div class="file-input">
+        <input id="json-format-file" class="file-input-box" type="file" id="jsonFile" accept=".json, .JSON">
+        <input id="html-format-file" class="file-input-box" type="file" id="jsonFile" accept=".json, .JSON">
+        <div class="file-input-box"></div>
     </div>
     <div class="container">
         <div id="file"></div>
-        <div id="json" class="box">
+        <div id="json-input" class="box input"></div>
+        <div id="html-input-tab" class="tab">
             <div id="image" class="type active">image</div>
             <div id="paragraph" class="type">paragraph</div>
             <div id="raw" class="type">raw</div>
@@ -26,15 +29,13 @@
             <div id="header" class="type">header</div>
         </div>
         <div id="html-input" class="box">
-            <div id="image-input" class="input"></div>
-            <div id="paragraph-input" class="input" ></div>
-            <div id="raw-input" class="input"></div>
-            <div id="embed-input" class="input"></div>
-            <div id="header-input" class="input"></div>
+            <div id="image-input" class="html-format input"></div>
+            <div id="paragraph-input" class="html-format input" ></div>
+            <div id="raw-input" class="html-format input"></div>
+            <div id="embed-input" class="html-format input"></div>
+            <div id="header-input" class="html-format input"></div>
         </div>
-        <div id="html-output" class="box">
-
-        </div>
+        <div id="html-output" class="box input"></div>
     </div>
 </body>
 </html>

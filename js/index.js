@@ -1,22 +1,42 @@
 let editors = [],
-jsonData;
+jsonData,
+reader;
 
 window.onload = function(){
-    let jsonData = document.getElementById("json");
+    loadEditor();
 
-    jsonData.childNodes.forEach((item, index) => {
+    document.getElementById("json-format-file").addEventListener('change', loadJSON);
+}
+
+function loadEditor() {
+    let jsonInput = document.getElementById("json-input");
+
+    editors.push(ace.edit("json-input"));
+    editors[0].setTheme("ace/theme/monokai");
+    editors[0].session.setMode("ace/mode/json");
+    editors[0].id = "json-input";
+
+    let htmlFormat = document.getElementById("html-input-tab");
+
+    htmlFormat.childNodes.forEach((item, index) => {
         if(index == 1){
             document.getElementById(item.id + "-input").style.display = "block";
         }
         if(item.nodeType == 1){
             document.getElementById(item.id).addEventListener("click", displayEditor);
-            editors[(index+1)/2 - 1] = ace.edit(item.id + "-input");
-            editors[(index+1)/2 - 1].setTheme("ace/theme/monokai");
-            editors[(index+1)/2 - 1].session.setMode("ace/mode/html");
+            editors[(index+1)/2] = ace.edit(item.id + "-input");
+            editors[(index+1)/2].setTheme("ace/theme/monokai");
+            editors[(index+1)/2].session.setMode("ace/mode/html");
+            editors[(index+1)/2].id = item.id + "-input";
         }
-    })
+    });
+    
+    // let htmlOutput = document.getElementById("htmlOutput");
 
-    document.getElementById("jsonFile").addEventListener('change', loadJSON);
+    editors.push(ace.edit("html-output"));
+    editors[editors.length-1].setTheme("ace/theme/monokai");
+    editors[editors.length-1].session.setMode("ace/mode/html");
+    editors[editors.length-1].id = "html-output";
 }
 
 function displayEditor() {
@@ -34,13 +54,18 @@ function displayEditor() {
 }
 
 function loadJSON(event) {
-    let reader = new FileReader();
+    reader = new FileReader();
     reader.onload = onReaderLoad;
     reader.readAsText(event.target.files[0]);
 }
 
 function onReaderLoad(event){
-    // console.log(event.target.result);
+    editors[0].setValue(event.target.result);
     jsonData = JSON.parse(event.target.result);
-    console.log(jsonData.blocks[0].type);
+    // editors[0].setValue(jsonData.blocks);
+    console.log(jsonData.toString());
 }
+
+window.onbeforeunload = function(event) {
+    event.returnValue = "REFRESHING WILL LOSE YOUR DATA";
+};
