@@ -26,6 +26,7 @@ body {
           flex: 3;
   border: solid;
   height: 50vh;
+  resize: both;
 }
 
 .type {
@@ -77,6 +78,7 @@ body {
   -webkit-box-flex: 4;
       -ms-flex: 4;
           flex: 4;
+  resize: both;
 }
 
 #html-output {

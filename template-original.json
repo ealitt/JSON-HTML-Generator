@@ -1,0 +1,100 @@
+{
+    "blocks": [
+     {
+      "type": "header",
+      "data": {
+       "html": "<h4>{{input}}</h4>"
+      }
+     },
+     {
+      "type": "paragraph",
+      "data": {
+       "html": "<p>{{input}}</p>"
+      }
+     },
+     {
+      "type": "image-single",
+      "data": {
+       "html": "<div>
+                    <div id='prints' class='slide-gallery'>
+                    {% for img in site.data.sprouting_strainer_mason_jars %}
+                        {% if img.category == 'prints' %}
+                            <img class='slides' src='{{img.img-url}}'>
+                        {% endif %}
+                    {% endfor %}
+                    <ul class='controls'>
+                        {% assign bubbles = 0 %}
+                            {% for img in site.data.sprouting_strainer_mason_jars %}
+                                {% if img.category == 'prints' %}
+                                    <li class='slide-bubble highlight hide' onclick='currentSlide({{bubbles}}, '#prints')' onmouseover='currentSlide({{bubbles}}, '#prints')'>
+                                        <svg><circle/></svg> 
+                                    </li>
+                                    {% assign bubbles = bubbles | plus: 1 %}
+                                {% endif %}
+                            {% endfor %}
+                    </ul>
+                </div>"
+      }
+     },
+     {
+        "type": "image-multiple",
+        "data": {
+         "html": "<div>
+                    <div id="result" class="slide-gallery">
+                    {% for img in site.data.sprouting_strainer_mason_jars %}
+                        {% if img.category == "result" %}
+                            <img class="slides" src="{{img.img-url}}">
+                        {% endif %}
+                    {% endfor %}
+                    <ul class="controls">
+                        {% assign bubbles = 0 %}
+                            {% for img in site.data.sprouting_strainer_mason_jars %}
+                                {% if img.category == "result" %}
+                                    <li class="slide-bubble highlight show" onclick="currentSlide({{bubbles}}, '#result')" onmouseover="currentSlide({{bubbles}}, '#result')">
+                                        <svg><circle/></svg> 
+                                    </li>
+                                    {% assign bubbles = bubbles | plus: 1 %}
+                                {% endif %}
+                            {% endfor %}
+                    </ul>
+                </div>"
+    }
+    },
+     {
+      "type": "unordered-list",
+      "data": {
+       "html": "<ul>
+                    <li>
+                        {{input}}
+                    </li>
+                </ul>"
+      }
+     },
+     {
+      "type": "ordered-list",
+      "data": {
+       "text": "<ol>
+                    <li>
+                        {{input}}
+                    </li>
+                </ol>"
+      }
+     },
+     {
+      "type": "3D-viewer",
+      "data": {
+       "html": "<div class="viewer">
+                    <iframe allowfullscreen="true" mozallowfullscreen="true" src='https://myhub.autodesk360.com/ue29eb019/shares/public/SHabee1QT1a327cf2b7a020d73803ce6467c?mode=embed&amp;wmode=opaque' data-embed="true" webkitallowfullscreen="true" width="100%" height="100%" frameborder="0"></iframe>
+                </div>"
+      }
+     },
+     {
+      "type": "youtube",
+      "data": {
+       "html": "<div class="youtube-video">
+                    <iframe width="100%" height="100%" src='https://www.youtube.com/embed/lph9v_47lMI' frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>"
+      }
+     }
+    ]
+}
