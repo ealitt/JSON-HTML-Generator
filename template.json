@@ -13,7 +13,7 @@
       }
      },
      {
-      "type": "image-single",
+      "type": "image",
       "data": {
        "html": "<div>\n<div id='prints' class='slide-gallery'>\n{% for img in site.data.sprouting_strainer_mason_jars %}\n{% if img.category == 'prints' %}\n<img class='slides' src='{{img.img-url}}'>\n{% endif %}\n{% endfor %}\n<ul class='controls'>\n{% assign bubbles = 0 %}\n{% for img in site.data.sprouting_strainer_mason_jars %}\n{% if img.category == 'prints' %}\n<li class='slide-bubble highlight hide' onclick='currentSlide({{bubbles}}, '#prints')' onmouseover='currentSlide({{bubbles}}, '#prints')'>\n<svg><circle/></svg>\n</li>\n{% assign bubbles = bubbles | plus: 1 %}\n{% endif %}\n{% endfor %}\n</ul>\n</div>"
       }

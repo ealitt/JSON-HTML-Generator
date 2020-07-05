@@ -1,4 +1,6 @@
-let editors = [],
+let blogEditor,
+templateEditors = [],
+outputEditor,
 jsonData,
 reader;
 
@@ -12,30 +14,18 @@ window.onload = function(){
     document.getElementById("generateHTML").addEventListener("click", generateHTML);
 }
 
-function generateHTML() {
-    let outputHTML;
-
-    let inputJSON = JSON.parse(editors[0].getValue());
-    // console.log(inputJSON.blocks);
-    inputJSON.blocks.forEach(block => {
-        console.log(block.data);
-    })
-}
-
 function loadEditor() {
     let jsonInput = document.getElementById("json-input");
 
-    editors.push(ace.edit("json-input"));
-    editors[0].setTheme("ace/theme/monokai");
-    editors[0].session.setMode("ace/mode/json");
-    editors[0].id = "json-input";
+    blogEditor = ace.edit("json-input");
+    blogEditor.setTheme("ace/theme/monokai");
+    blogEditor.session.setMode("ace/mode/json");
+    blogEditor.id = "json-input";
     
-    // let htmlOutput = document.getElementById("htmlOutput");
-
-    editors.push(ace.edit("html-output"));
-    editors[editors.length-1].setTheme("ace/theme/monokai");
-    editors[editors.length-1].session.setMode("ace/mode/html");
-    editors[editors.length-1].id = "html-output";
+    outputEditor = ace.edit("html-output");
+    outputEditor.setTheme("ace/theme/monokai");
+    outputEditor.session.setMode("ace/mode/html");
+    outputEditor.id = "html-output";
 }
 
 function displayEditor() {
@@ -62,12 +52,11 @@ function loadJSON(event) {
 function onReaderLoad(event){
     jsonData = JSON.parse(event.target.result);
     setupEditor(srcElement, jsonData);
-    // editors[0].setValue(event.target.result);
 }
 
 function setupEditor(srcElement, data) {
     if(srcElement.id == "json-format-file"){
-        editors[0].setValue(JSON.stringify(data, null, 1));
+        blogEditor.setValue(JSON.stringify(data, null, 1));
     } else {
         let inputTabs = document.getElementById("html-input-tab");
         let inputBox = document.getElementById("html-input");
@@ -85,11 +74,17 @@ function setupEditor(srcElement, data) {
         // event listener and editors instantiated later to allow DOM to load
         data.blocks.forEach(item => {
             document.getElementById(item.type).addEventListener("click", displayEditor);
-            editors.push(ace.edit(`${item.type}-input`));
-            editors[editors.length-1].setTheme("ace/theme/monokai");
-            editors[editors.length-1].session.setMode("ace/mode/html");
-            editors[editors.length-1].id = `${item.type}-input`;
-            editors[editors.length-1].setValue(item.data.html);
+            // editors.push(ace.edit(`${item.type}-input`));
+            // editors[editors.length-1].setTheme("ace/theme/monokai");
+            // editors[editors.length-1].session.setMode("ace/mode/html");
+            // editors[editors.length-1].id = `${item.type}-input`;
+            // editors[editors.length-1].setValue(item.data.html);
+
+            templateEditors.push(ace.edit(`${item.type}-input`));
+            templateEditors[templateEditors.length-1].setTheme("ace/theme/monokai");
+            templateEditors[templateEditors.length-1].session.setMode("ace/mode/html");
+            templateEditors[templateEditors.length-1].id = `${item.type}-input`;
+            templateEditors[templateEditors.length-1].setValue(item.data.html);
         });
     }
 }

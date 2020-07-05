@@ -75,9 +75,6 @@ body {
 }
 
 #html-input {
-  -webkit-box-flex: 4;
-      -ms-flex: 4;
-          flex: 4;
   resize: both;
 }
 
